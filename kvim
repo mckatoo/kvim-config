@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# export NVIM_APPNAME="${NVIM_APPNAME:-"kvim"}"
+
+# export KATOOVIM_RUNTIME_DIR="${KATOOVIM_RUNTIME_DIR:-"/home/mckatoo/.local/share/kvim"}"
+# export KATOOVIM_CONFIG_DIR="${KATOOVIM_CONFIG_DIR:-"/home/mckatoo/.config/kvim"}"
+# export KATOOVIM_CACHE_DIR="${KATOOVIM_CACHE_DIR:-"/home/mckatoo/.cache/kvim"}"
+
+# export KATOOVIM_BASE_DIR="${KATOOVIM_BASE_DIR:-"/home/mckatoo/.local/share/kvim/kvim"}"
+
+# exec -a "$NVIM_APPNAME" nvim -u "$KATOOVIM_BASE_DIR/init.lua" "$@"
+# exec -a kvim nvim -u "$HOME/.config/kvim/init.lua" "$@"
+exec -a kvim nvim $@

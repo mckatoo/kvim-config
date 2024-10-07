@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+CONFIG_DIR=$HOME/.config/kvim
+AUTOLOAD_DIR=$HOME/.local/share/kvim/site/autoload
+
+if [ ! -d $CONFIG_DIR ]; then
+  mkdir -p $CONFIG_DIR
+fi
+ln -s $PWD/lua $CONFIG_DIR/
+cp kvim $HOME/.local/bin/
+
+if [ ! -L "$CONFIG_DIR/init.lua" ]; then
+  ln -s $PWD/init.lua $CONFIG_DIR/init.lua
+fi
+
+ALIASES_EXIST=$(whereis aliases | sed "s/aliases\://")
+ALIAS="alias kvim='NVIM_APPNAME=kvim nvim'"
+
+if ! grep "$ALIAS" $HOME/.zshrc > /dev/null; then
+  echo "$ALIAS" >> $HOME/.zshrc
+fi
+
+exec zsh
