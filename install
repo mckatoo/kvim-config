@@ -6,12 +6,21 @@ AUTOLOAD_DIR=$HOME/.local/share/kvim/site/autoload
 if [ ! -d $CONFIG_DIR ]; then
   mkdir -p $CONFIG_DIR
 fi
-ln -s $PWD/lua $CONFIG_DIR/
+
+if [ ! -L "$CONFIG_DIR/init.lua" ]; then
+  ln -s $PWD/lua $CONFIG_DIR/
+fi
+
 cp kvim $HOME/.local/bin/
 
 if [ ! -L "$CONFIG_DIR/init.lua" ]; then
-  ln -s $PWD/init.lua $CONFIG_DIR/init.lua
+  ln -s $PWD/init.lua $CONFIG_DIR/
 fi
+
+if [ ! -L "$CONFIG_DIR/snippets" ]; then
+  ln -s $PWD/snippets $CONFIG_DIR/
+fi
+
 
 ALIASES_EXIST=$(whereis aliases | sed "s/aliases\://")
 ALIAS="alias kvim='NVIM_APPNAME=kvim nvim'"
