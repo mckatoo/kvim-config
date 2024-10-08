@@ -3,8 +3,6 @@ local vim = vim
 vim.opt.clipboard = 'unnamedplus'
 -- vim.cmd([[ set rtp += "~/.config/kvim" ]])
 -- vim.opt.rtp += "~/.config/kvim"
-require("config.lazy")
-require("config.keys")
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
@@ -16,3 +14,6 @@ vim.opt.tabstop = 2 -- insert 2 spaces for a tab
 vim.opt.relativenumber = true -- relative line numbers
 vim.opt.wrap = true -- wrap lines
 
+require("config.lazy")
+require("config.keys")
+require("config.lsp")
