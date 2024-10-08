@@ -17,3 +17,4 @@ vim.opt.wrap = true -- wrap lines
 require("config.lazy")
 require("config.keys")
 require("config.lsp")
+require("config.lualine")
