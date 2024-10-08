@@ -29,4 +29,3 @@ if ! grep "$ALIAS" $HOME/.zshrc > /dev/null; then
   echo "$ALIAS" >> $HOME/.zshrc
 fi
 
-exec zsh
