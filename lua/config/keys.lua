@@ -1,26 +1,29 @@
+---@diagnostic disable: undefined-global
+local map = vim.keymap.set
+
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<S-h>", "<Cmd>BufferPrevious<CR>", { silent = true })
-vim.keymap.set("n", "<S-l>", "<Cmd>BufferNext<CR>", { silent = true })
-vim.keymap.set("n", ";", "A;<ESC>", { silent = true })
-vim.keymap.set("n", ",", "A,<ESC>", { silent = true })
-vim.keymap.set("n", "<C-a>", ":wall<CR>", { silent = true })
-vim.keymap.set("n", "<leader>so", "<Cmd>SortImport<CR>", { silent = true })
-vim.keymap.set("n", "<leader>k", "<PageUp>", { silent = true })
-vim.keymap.set("n", "<leader>j", "<PageDown>", { silent = true })
-vim.keymap.set("n", "<M-Up>", "<Cmd>horizontal resize +2<CR>", { silent = true })
-vim.keymap.set("n", "<M-Down>", "<Cmd>horizontal resize -2<CR>", { silent = true })
-vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { silent = true })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { silent = true })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { silent = true })
+map("n", "<S-h>", "<Cmd>BufferPrevious<CR>", { silent = true })
+map("n", "<S-l>", "<Cmd>BufferNext<CR>", { silent = true })
+map("n", ";", "A;<ESC>", { silent = true })
+map("n", ",", "A,<ESC>", { silent = true })
+map("n", "<C-a>", ":wall<CR>", { silent = true })
+map("n", "<leader>so", "<Cmd>SortImport<CR>", { silent = true })
+map("n", "<leader>k", "<PageUp>", { silent = true })
+map("n", "<leader>j", "<PageDown>", { silent = true })
+map("n", "<M-Up>", "<Cmd>horizontal resize +2<CR>", { silent = true })
+map("n", "<M-Down>", "<Cmd>horizontal resize -2<CR>", { silent = true })
+map("n", "<C-h>", "<C-w>h", { silent = true })
+map("n", "<C-l>", "<C-w>l", { silent = true })
+map("n", "<C-j>", "<C-w>j", { silent = true })
+map("n", "<C-k>", "<C-w>k", { silent = true })
 
-vim.keymap.set("i", "jk", "<esc>", { silent = true })
-vim.keymap.set("i", "<C-l>", "<Right>", { silent = true })
-vim.keymap.set("i", "<C-h>", "<Left>", { silent = true })
-vim.keymap.set("i", "<C-k>", "<Up>", { silent = true })
-vim.keymap.set("i", "<C-j>", "<Down>", { silent = true })
-vim.keymap.set("i", "<C-o>", "<ESC>o", { silent = true })
+map("i", "jk", "<esc>", { silent = true })
+map("i", "<C-l>", "<Right>", { silent = true })
+map("i", "<C-h>", "<Left>", { silent = true })
+map("i", "<C-k>", "<Up>", { silent = true })
+map("i", "<C-j>", "<Down>", { silent = true })
+map("i", "<C-o>", "<ESC>o", { silent = true })
 
 require('Comment').setup({
     toggler = {
@@ -38,15 +41,17 @@ require('Comment').setup({
     },
 })
 
-vim.keymap.set({ "n", "v" }, "<Leader>e", ":NvimTreeToggle<CR>", { silent = true })
-vim.keymap.set({ "n", "v" }, "<Leader>w", ":w<CR>", { silent = true })
-vim.keymap.set({ "n", "v" }, "<Leader>q", ":qa<CR>", { silent = true })
-vim.keymap.set({ "n", "v" }, "<Leader>s", ":source ~/.config/kvim/init.lua<CR>", { silent = true })
-vim.keymap.set({ "n", "v" }, "<Leader>c", ":BufferClose<CR>")
+map({ "n", "v" }, "<Leader>e", ":NvimTreeToggle<CR>", { silent = true })
+map({ "n", "v" }, "<Leader>w", ":w<CR>", { silent = true })
+map({ "n", "v" }, "<Leader>q", ":qa<CR>", { silent = true })
+map({ "n", "v" }, "<Leader>s", ":source ~/.config/kvim/init.lua<CR>", { silent = true })
+map({ "n", "v" }, "<Leader>c", ":BufferClose<CR>")
+map({ "n", "v" }, "<Leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+map({ "n", "v" }, "<Leader>lf", "<cmd>lua FormatFunction()<CR>")
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
--- vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
--- vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+map('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+-- map('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+-- map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
