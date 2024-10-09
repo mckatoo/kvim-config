@@ -12,6 +12,7 @@ vim.opt.tabstop = 2               -- insert 2 spaces for a tab
 
 vim.g.colorscheme = 'oxocarbon'
 vim.g.neon_style = 'dark'
+vim.g.mapleader = " "
 
 require("config.lazy")
 require("config.keys")
