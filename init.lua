@@ -5,7 +5,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
 
-vim.opt.cmdheight = 2             -- more space in the neovim command line for displaying messages
+vim.opt.cmdheight = 0             -- more space in the neovim command line for displaying messages
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 vim.opt.shiftwidth = 2            -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 2               -- insert 2 spaces for a tab
